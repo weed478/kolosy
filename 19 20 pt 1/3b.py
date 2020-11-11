@@ -24,21 +24,21 @@ def can_place(board):
 
     while placed[0] < size:
         if is_valid(placed, board):
-            return True
+            return placed
 
         tick_positions(placed, size)
 
-    return False
+    return None
 
 
-tab = [[1, 1, 2, 3, 4, 5, 6, 7],
+tab = [[1, 10, 5, 3, 4, 5, 6, 7],
        [1, 1, 2, 10, 4, 5, 6, 7],
        [2, 5, 2, 3, 4, 5, 6, 7],
-       [3, 1, 2, 3, 5, 5, 6, 7],
+       [3, 1, 2, 3, -5, 5, 6, 7],
        [4, 1, 2, 3, 4, 5, 20, 7],
-       [5, 1, 2, 3, 20, 5, 6, 7],
+       [5, 1, 2, 3, -20, 5, 6, 7],
        [6, 1, 3, 3, 4, 5, 6, 7],
-       [7, 1, 2, 3, 123, 5, 6, 7]]
+       [7, 1, 2, 3, -3, 5, 6, 7]]
 
 print(can_place(tab))
 
