@@ -23,6 +23,8 @@ def last_factorial_digit(n):
         while ((factorial % digit_mask) * (i % digit_mask)) % digit_mask == 0:
             digit_mask *= 10
 
+        digit_mask *= 10
+
         factorial %= digit_mask
         i %= digit_mask
         factorial *= i
@@ -35,7 +37,7 @@ def last_factorial_digit(n):
     return factorial % 10
 
 
-for N in range(200):
+for N in range(3000):
     last_digit = last_factorial_digit(N)
     if not check(N, last_digit):
         print("f({}) = {}".format(N, last_digit))
